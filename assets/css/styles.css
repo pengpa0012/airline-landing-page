@@ -1,0 +1,642 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: sans-serif;
+    --white-text: #f1f1f1;
+    --red-bg: #e24141;
+    --red-bg-hover: #be3636;
+    --gray-bg: #dadada;
+    --gray-bg-hover: #c4c4c4;
+    --black-text: #313131;
+    --gray-text: #525252;
+}
+
+/* Global */
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6{
+    margin-bottom: 0rem;
+}
+
+.nav-burger{
+    display: none;
+}
+
+li{
+    list-style: none;
+}
+
+p{
+    line-height: 30px;
+    color: var(--gray-text);
+}
+
+span{
+    display: block;
+}
+
+ul{
+    margin-bottom: 0;
+    padding-left: 0;
+}
+
+button,
+input,
+textarea{
+    outline: none;
+}
+
+.heading{
+    margin-bottom: 5rem;
+    text-align: center;
+}
+
+.heading h2{
+    margin-bottom: 20px;
+    color: var(--black-text);
+}
+
+.red-btn{
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background: var(--red-bg);
+    color: var(--white-text);
+}
+
+.gray-btn{
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background: var(--gray-bg);
+    color: var(--black-text);
+}
+
+.red-btn:hover{
+    background: var(--red-bg-hover);
+}
+
+.gray-btn:hover{
+    background: var(--gray-bg-hover);
+}
+
+.wrapper,
+header nav{
+    max-width: 1440px;
+    margin: auto;
+}
+
+.about,
+.services,
+.need-help{
+    padding: 10rem 30px;
+}
+
+/* Header */
+
+header{
+    padding: 1rem 30px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    z-index: 5;
+}
+
+header nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header nav .logo{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    color: var(--red-bg);
+    font-weight: bold;
+}
+
+header nav .logo img{
+    margin-right: 10px;
+}
+
+header nav ul{
+    display: flex;
+}
+
+header nav ul li a{
+    margin: 0 10px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    text-decoration: none;
+    color: var(--black-text)
+}
+
+header nav ul li a:hover{
+    color: var(--red-bg);
+}
+
+header nav .search{
+    display: flex;
+    align-items: center;
+    
+}
+
+header nav .search img{
+    padding: 10px 15px;
+    background: var(--red-bg);
+    margin-left: -1px;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+header nav .search img:hover{
+    background: var(--red-bg-hover);
+}
+
+header nav .search input{
+    padding: 5px;
+    font-size: 1.1rem;
+    border-radius: 5px 0 0 5px;
+    border-color: var(--gray-bg);
+}
+
+header nav .search input:focus{
+    border-color: var(--black-text);
+}
+
+/* Front */
+
+.front{
+    padding: 15rem 30px;
+    background: linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)), url('../img/front-bg.jpg') no-repeat;
+    background-size: cover;
+    position: relative;   
+}
+
+.front .wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;  
+}
+
+.front .wrapper .front-text{
+    width: 50%;
+}
+
+.front .wrapper .front-text h1{
+    font-size: 3rem;
+    color: var(--white-text);
+}
+
+.front .wrapper .front-text p{
+    margin: 30px 0 50px 0;
+    font-size: 1.2rem;
+    color: var(--white-text);
+}
+
+.front .wrapper .front-text .learn-more{
+    display: flex;
+    align-items: center;
+    color: var(--white-text);
+    cursor: pointer;
+}
+
+.front .wrapper .front-text .learn-more:hover img{
+    transform: translateX(2px);
+}
+
+.front .wrapper .front-text .learn-more span{
+    margin-right: 5px;
+    border-bottom: solid 2px var(--white-text);
+}
+
+.front .wrapper .front-text .learn-more img{
+    width: 15px;
+    transition: 200ms ease-in;
+}
+
+/* Flight Form */
+
+.flight-form{
+    padding-top: 5rem;
+}
+
+.flight-form .wrapper form{ 
+    padding: 7rem 30px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.flight-form .wrapper form h1{
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.flight-form .wrapper form .tabs{
+    display: flex;
+    justify-content: space-around;
+    margin: 3rem 0 5rem 0; 
+    box-shadow: 0 0px 8px 0px rgba(0,0,0,.1);
+}
+
+.flight-form .wrapper form .tabs .tab{
+    text-align: center;
+    cursor: pointer;
+    flex: 1;
+    padding: 15px 0;
+    color: var(--gray-text);
+}
+
+.flight-form .wrapper form .tabs .tab.active{
+    background: var(--red-bg);
+    color: var(--white-text);
+}
+
+.flight-form .wrapper form .inputs{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 60px;
+}
+
+.flight-form .wrapper form input[type="text"]{
+    width: 100%;
+    margin-bottom: 30px;
+    outline: none;
+    border-radius: 5px;
+    padding: 8px 5px;
+    font-size: 1.1rem;
+    border: solid 1px #8d8d8d;
+}
+
+.flight-form .wrapper form input:focus{
+    border: solid 1px #000;
+}
+
+.flight-form .wrapper form .label{
+    margin-bottom: 5px;
+    color: var(--gray-text);
+}
+
+/* About */
+
+.about .wrapper .content{
+    display: flex;
+    justify-content: space-between;
+}
+
+.about .wrapper .about-img img{
+    width: 100%;
+}
+
+.about .wrapper .about-text,
+.about .wrapper .about-img{
+    flex: 1;
+}
+
+.about .wrapper .about-text{
+    padding: 2rem 3rem;
+}
+
+.about .wrapper .about-text span{
+    margin-bottom: 20px;
+    color: var(--gray-text);
+}
+
+.about .wrapper .about-text h2{
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+.about .wrapper .about-text p{
+    margin-bottom: 10px;
+    text-align: justify;
+}
+
+.about .wrapper .about-text button{
+    margin-top: 20px;
+}
+
+/* Destination Insight */
+
+.destination-insight{
+    padding: 10rem 0px;
+}
+
+.destination-insight .carousel{
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* Services */
+
+.services .wrapper .services-box{
+    display: flex;
+    justify-content: space-between;
+}
+
+.services .wrapper .services-box .box{
+    margin-bottom: 5rem;
+    margin-right: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.services .wrapper .services-box .box:last-child{
+    margin-right: 0;
+}
+
+.services .wrapper .services-box .box img{
+    width: 100%;
+}
+
+.services .wrapper .services-box .box .text{
+    padding: 30px 20px;
+}
+
+.services .wrapper .services-box .box .text h4{
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.services .wrapper .services-box .box .text p{
+    margin-bottom: 15px;
+}
+
+/* Need Help */
+
+.need-help{
+    background: linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)), url('../img/need-help.jpg') no-repeat;
+    background-size: cover;
+    background-position: left center;
+    color: var(--white-text);
+}
+
+.need-help .wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.need-help .wrapper .text .title{
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.need-help .wrapper .text p{
+    margin: 10px 0 15px 0;
+    color: var(--white-text);
+}
+
+
+
+/* Footer */
+
+footer{
+    padding: 3rem 30px 1rem 30px;
+    background: #232323;
+    color: var(--white-text) !important;
+}
+
+footer .wrapper .upper{
+    margin-bottom: 1rem;
+}
+
+footer .wrapper .upper,
+footer .wrapper .lower{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+    
+footer .wrapper .upper .links{
+    display: flex;
+    margin-bottom: 3rem;
+}
+
+footer .wrapper .upper .links .link{
+    margin-right: 5rem;
+}
+
+footer .wrapper .upper .links .link h6{
+    margin-bottom: 20px;
+}
+
+footer .wrapper .upper .links .link li{
+    margin-bottom: 5px;  
+    cursor: pointer;
+}
+
+footer .wrapper .upper .links .link li:hover{
+    text-decoration: underline;
+}
+
+footer .wrapper .upper .form{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+footer .wrapper .upper .form h6{
+    margin-bottom: 20px;   
+}
+
+footer .wrapper .upper .form input{
+    padding: 10px 15px;
+    font-size: 1rem;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    border-radius: 25px;
+}
+
+footer .wrapper .upper .form input[type="text"],
+footer .wrapper .upper .form input[type="email"]{
+    color: var(--gray-text);
+}
+
+footer .wrapper .upper .form input[type="submit"]{
+    align-self: flex-end;
+    margin-top: 10px;
+    padding: 10px 25px;
+}
+
+footer .wrapper .lower .left p{
+    color: var(--white-text);
+}
+
+footer .wrapper .lower .right img{
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+/* Media Queries*/
+
+@media (max-width: 900px){
+
+    h1{
+        font-size: 2rem !important;
+    }
+
+    .nav-burger{
+        display: block;
+        cursor: pointer;
+    }
+
+    header nav .search{
+        display: none;
+    }
+
+    header nav ul{
+        position: absolute;
+        background: #fff;
+        top: 50px;
+        left: 0;
+        right: 0;
+        padding: 2rem 30px;
+        flex-direction: column;
+        display: none;
+    }
+
+    header nav ul li{
+        margin: 0 0 20px 0;
+    }
+
+    header nav ul.active{
+        display: block;
+    }
+    
+    .about .wrapper .content{
+        flex-direction: column;
+    }
+
+    .about .wrapper .content .about-text{
+        margin-right: 0;
+    }
+
+    .about .wrapper .about-text h2{
+        margin-bottom: 10px;
+    }
+
+    .services .wrapper .services-box{
+        flex-direction: column;
+    }
+    
+    .services .wrapper .services-box .box{
+        margin: 1rem 10px;
+    }
+    
+}
+
+@media (max-width: 710px){
+
+    header{
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .title{
+        font-size: 1.5rem !important;
+    }
+
+    .heading{
+        margin-bottom: 4rem;
+    }
+
+    .heading h2{
+        margin-bottom: 10px;
+    }
+
+    .front{
+        padding-top: 10rem;
+        padding-bottom: 10rem;
+    }
+
+    .about,
+    .services,
+    .need-help{
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+    }
+
+    button, input, p{
+        line-height: normal;
+        font-size: .9rem !important;
+    }
+
+    h2{
+        font-size: 1.25rem !important;
+    }
+
+    h3, h4{
+        font-size: 1rem !important;
+    }
+
+    header,
+    .front,
+    .flight-form,
+    .about,
+    .services,
+    .need-help,
+    footer{
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    .about,
+    .destination-insight,
+    .services,
+    .need-help{
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+    }
+    
+    .front .wrapper .front-text{
+        width: 100%;
+    }
+
+    .flight-form .wrapper form{
+        padding: 5rem 0 2rem 0;
+    }
+
+    .flight-form .wrapper form .tabs{
+        flex-direction: column;
+    }
+ 
+    .flight-form .wrapper form .inputs{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    
+    .flight-form .wrapper form input[type="text"]{
+        margin-bottom: 15px;
+    }
+
+    footer .wrapper,
+    footer .wrapper .links,
+    footer .wrapper .upper,
+    footer .wrapper .lower{
+       flex-direction: column;    
+    }
+
+    footer .wrapper .lower{
+        margin-bottom: 2rem;
+    }
+
+    footer .wrapper .links .link{
+        margin-bottom: 2rem;
+        margin-right: 0;
+    }
+}
